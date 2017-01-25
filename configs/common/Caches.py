@@ -71,6 +71,16 @@ class L2Cache(Cache):
     mshrs = 20
     tgts_per_mshr = 12
     write_buffers = 8
+#Marzieh
+class L3Cache(Cache):
+        assoc = 16
+        tag_latency = 50
+        data_latency = 50
+        response_latency = 50
+        mshrs = 512
+        tgts_per_mshr = 20
+        write_buffers = 256
+#Marzieh
 
 class IOCache(Cache):
     assoc = 8
