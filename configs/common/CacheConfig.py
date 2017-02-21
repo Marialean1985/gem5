@@ -88,12 +88,12 @@ def config_cache(options, system):
         # same clock as the CPUs.
         system.l2 = l2_cache_class(clk_domain=system.cpu_clk_domain,
                                    size=options.l2_size,
-                                   assoc=options.l2_assoc)
+                                   assoc=options.l2_assoc,ratio=options.ratio)
 
     if options.l3cache:
         system.l3 = l3_cache_class(clk_domain=system.cpu_clk_domain,
         size=options.l3_size,
-        assoc=options.l3_assoc)
+        assoc=options.l3_assoc,ratio=options.ratio)
 
         system.tol2bus = L2XBar(clk_domain = system.cpu_clk_domain)
         system.tol3bus = L2XBar(clk_domain = system.cpu_clk_domain, width=64)
@@ -122,7 +122,7 @@ def config_cache(options, system):
             icache = icache_class(size=options.l1i_size,
                                   assoc=options.l1i_assoc)
             dcache = dcache_class(size=options.l1d_size,
-                                  assoc=options.l1d_assoc)
+                                  assoc=options.l1d_assoc,ratio=options.ratio)
 
             # If we have a walker cache specified, instantiate two
             # instances here

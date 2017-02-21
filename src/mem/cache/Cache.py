@@ -51,6 +51,7 @@ class BaseCache(MemObject):
     cxx_header = "mem/cache/base.hh"
 
     size = Param.MemorySize("Capacity")
+    ratio = Param.Float("Ratio of virtual block size to physical block size")
     assoc = Param.Unsigned("Associativity")
 
     tag_latency = Param.Cycles("Tag lookup latency")

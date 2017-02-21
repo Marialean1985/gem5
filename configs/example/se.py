@@ -63,6 +63,8 @@ from common import MemConfig
 from common.Caches import *
 from common.cpu2000 import *
 
+m5.disableAllListeners()
+
 # Check if KVM support has been enabled, we might need to do VM
 # configuration if that's the case.
 have_kvm_support = 'BaseKvmCPU' in globals()
